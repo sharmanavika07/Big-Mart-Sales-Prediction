@@ -37,12 +37,16 @@ Outlet_Type : Whether the outlet is just a grocery store or some sort of superma
 Item_Outlet_Sales : Sales of the product in the particulat store. This is the outcome variable to be predicted.
 
 
-# Aproach to our Problem
-1)So it seems that the highest accuarcy possible is 68-69%, as there are too many categorical variables. The data was already non-liear on top of that.
-2) We tranformed the whole dataset and our accuracy score got a little better. 
-3) But the glaring problem is multi-collinearity.
-4) There is strong presence of multi-collinearity AND heteroskedaticity.
-5) So we now have a strong non-linear data so we have to change it into linear data
-6) we use data tranformation to change it into linear data and then we check the residual plot to check for heteroskedacity. A funnel shaped residual depicts heteroskedacity.
+# Aproach to our Problem and Observations:
+1) First we check for missing data. There are missing values and some categorical variables have repeated values. So data cleaning is      required. 
+2) Then we check the normality of the data. For multiple linearregression, one of the assumptions is that the Actual values should be      normal.
+3) We analyse the data through boxplots, scatter plots to see the descriptive analysis. Theseprobes could tell us whether some columns/feature are having an effect on the output variables or not. We can use them feature selection.
+4) We tried various methods for Feature Extraction, then selected the ones which help the model achieve an approximate bias-variance tradeoff. 
+5) OLS models have to be built for checking multi-collinearity, heteroskedaticity and other important assumptions for building a succesful multiple linear regression.
+6) We then train and test our models through various regression algorithms.
 
-We get the lowest error of 1158 after hyperparameter tuning of Gradient Boosting Rgegressor
+# Conclusion:
+*The Most Significant Results* 
+- **We get the an error of 1158 after using Gradient Boosting Rgegressor algorithm**
+- **We get the an error of 1170 after using Random Forest Rgegressor algorithm**
+- **We get the an error of 1153 after using Xtreme Gradient Boosting algorithm and Hyperparamter Tuning**
