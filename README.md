@@ -7,6 +7,12 @@ The aim is to build a predictive model and find out the sales of each product at
 
 Please note that the data may have missing values as some stores might not report all the data due to technical glitches. Hence, it will be required to treat them accordingly.
 
+# My Performance - 300 rank out of 36657 participants. (As of 12.07.20)
+# The lowest rmse was 1128.19, my model's rmse was 1148.30.
+
+https://datahack.analyticsvidhya.com/contest/practice-problem-big-mart-sales-iii/#LeaderBoard
+
+
 # Data Description
 Data We have train (8523) and test (5681) data set, train data set has both input and output variable(s). You need to predict the sales for test data set.
 
