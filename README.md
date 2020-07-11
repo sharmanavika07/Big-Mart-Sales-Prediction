@@ -37,16 +37,67 @@ Outlet_Type : Whether the outlet is just a grocery store or some sort of superma
 Item_Outlet_Sales : Sales of the product in the particulat store. This is the outcome variable to be predicted.
 
 
-# Aproach to our Problem and Observations:
-1) First we check for missing data. There are missing values and some categorical variables have repeated values. So data cleaning is      required. 
-2) Then we check the normality of the data. For multiple linearregression, one of the assumptions is that the Actual values should be      normal.
-3) We analyse the data through boxplots, scatter plots to see the descriptive analysis. Theseprobes could tell us whether some columns/feature are having an effect on the output variables or not. We can use them feature selection.
-4) We tried various methods for Feature Extraction, then selected the ones which help the model achieve an approximate bias-variance tradeoff. 
-5) OLS models have to be built for checking multi-collinearity, heteroskedaticity and other important assumptions for building a succesful multiple linear regression.
-6) We then train and test our models through various regression algorithms.
+# Aproach to our Problem:
+1) Check for missing data and the data types - categorical or numerical -  present in the dataset 
+2) Check the normality of the data. For multiple linear regression, one of the assumptions is that the Actual values should be normal.
+3) We analyse the data through boxplots, scatter plots to see the descriptive analysis. These probes could tell us whether some columns/feature are     having an effect on the output variables or not. We can use them feature selection.
+4) Treating the missing data. 
+5) Multivariate Analysis and then Feature Extraction.
+6) OLS models have to be built for checking multi-collinearity, heteroskedaticity and other important assumptions for building a succesful multiple linear regression.
+7) Prediction using various Regression Algorithms. The most important aspects are the prediction score and the rmse error.
+
+# Observations:
+**Algorithm,	RMSE Error
+1)Polynomial Regression -	Very High Error**
+
+**2)Linear Regression -	1155.952**
+
+**3)Random Forest -	1150**
+
+**4)XGBoost	- 1152.94**
+
+**5)Gradient Boosting -	1155**
+
+**6)SVM	- 1167**
+
+**7)Linear SVM -	1167.27**
+
+**8)NuSVM	- 1164**
+
+**9)Ada Boost	- 1157**
+
+**10)KNN	- 1154**
+
+**11)Bagging Regressor -	1157**
+
+**12)Lasso Lars IC	- 1180**
+
+Final Obseravtions: 
+1) The model was transformed before training and testing. When the input was transformed for non-linearity as well, so that gave us our best result.
+
+2) Boxplots and groupby functions were used to decide on the significant variables for categorical variables
+   While heatmaps, scatterplots were used for deciding on numerical variables.
+
+2) When more features are introduced through feature extraction and feature transformation, accuracy increases but rmse error increases or doesnt get affected.
+
+3) Item_MRP and Item_Outlet_Type are our most significant features.
+
+4) Rmse gets affected due to high multicolinearity amonsgt varibles. But if those variables are dropped which show high multicollinearity, the accuracy is compromised.
+
+5) Outlier removal didn't help with the model because they reduce the variance, and then the model underperformed.
+
+6) It seems that the highest accuarcy possible is 68-69%. Any removal of insignificant variable results the model being underfit.
+
+7) The model where all the varibles were taken into account, the results were overall better.
+
+8) Ensemble Methods performed the best. Random Forest Regressor gave us the best model - with or without the insignificant features.
+
 
 # Conclusion:
-*The Most Significant Results* 
-- **We get the an error of 1158 after using Gradient Boosting Rgegressor algorithm**
-- **We get the an error of 1170 after using Random Forest Rgegressor algorithm**
-- **We get the an error of 1153 after using Xtreme Gradient Boosting algorithm and Hyperparamter Tuning**
+Random Forest performed the best with the lowest RMSE of 1148-1150.
+A random forest is a meta estimator that fits a number of decision trees on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. It is a voting type algorithm, that builds multiple trees from the same dataset, and uses voting to decide on the best output on adequate variance and bias from those multiple models. It is a bootstrap model
+
+# Interesting findings:
+1) Supermarket Type 1 had the most sales because it sold the most variety in every Item_Type. 
+
+
