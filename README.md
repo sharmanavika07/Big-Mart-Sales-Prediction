@@ -105,5 +105,5 @@ A random forest is a meta estimator that fits a number of decision trees on vari
 
 # Interesting findings:
 1) Supermarket Type 1 had the most sales because it sold the most variety in every Item_Type. 
-
+2) An increase in Item MRP also affects the Sales
 
